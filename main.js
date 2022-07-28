@@ -1,5 +1,5 @@
-// Create a grid based on parameters given. Default grid size = 16x16.
-function createGrid(width=16, height=16) {
+// Create a grid based on parameters given. Default grid size = 32x32.
+function createGrid(width=32, height=32) {
     for (let x = 0; x < width; x++) {
         const column = document.createElement("div");
         column.id = `column-${x}`;
