@@ -1,17 +1,35 @@
-// Create a grid based on parameters given. Default grid size = 32x32.
-function createGrid(width=32, height=32) {
+// Create a grid based on parameters given.
+function createGrid(width=50, height=50, size=10) {
     for (let x = 0; x < width; x++) {
         const column = document.createElement("div");
         column.id = `column-${x}`;
-        container.appendChild(column);
+        sketchpad.appendChild(column);
 
         for (let y = 0; y < height; y++) {
-            const row = document.createElement("div");
-            row.id = `row-${y}`;
-            container.lastChild.appendChild(row);
+            const sector = document.createElement("div");
+            sector.className = "sector";
+            sector.style.minWidth = `${size}px`;
+            sector.style.minHeight = `${size}px`;
+            sketchpad.lastChild.appendChild(sector);
         }
     }
 }
 
-const container = document.querySelector("#container");
+function deleteGrid() {
+    sketchpad.textContent = '';
+}
+
+// Prompts for new size, deletes old grid, then creates a new grid
+// Modifies sector sizes so that sketchpad stays 500x500
+function changeGridDensity() {
+    const newDensity = Number(prompt("Enter a new grid size #: "));
+    deleteGrid();
+    createGrid(newDensity, newDensity, 500 / newDensity);
+}
+
+const sketchpad = document.querySelector("#sketchpad");
+const densityButton = document.querySelector(".density-button");
+
+densityButton.addEventListener('click', changeGridDensity);
+
 createGrid();
