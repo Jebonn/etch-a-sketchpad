@@ -4,6 +4,7 @@ body {
 
 button {
     border-radius: 8px;
+    margin: 8px;
 }
 
 .sector:hover {

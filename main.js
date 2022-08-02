@@ -20,11 +20,15 @@ function deleteGrid() {
 }
 
 // Prompts for new size, deletes old grid, then creates a new grid
-// Modifies sector sizes so that sketchpad stays 500x500
 function changeGridDensity() {
-    const newDensity = Number(prompt("Enter a new grid size #: "));
+    let density = Number(prompt("Enter a new grid size (max 100): "));
+    if (density == 0) {return};
+    while (density < 0 || density > 500 || isNaN(density)) {
+        density = Number(prompt("Please enter a valid size (1-100): "));
+        if (density == 0) {return};
+    }
     deleteGrid();
-    createGrid(newDensity, newDensity, 500 / newDensity);
+    createGrid(density, density, 500 / density);
 }
 
 const sketchpad = document.querySelector("#sketchpad");
