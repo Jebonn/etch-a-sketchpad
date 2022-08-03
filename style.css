@@ -1,10 +1,47 @@
 body {
     background-color: cornflowerblue;
+    font-family: Arial, Courier, monospace;
+    font-size: 16px;
 }
 
 button {
     border-radius: 8px;
-    margin: 8px;
+}
+
+#buttons {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 4px;
+}
+
+#color-box {
+    background-color: #EFEFEF;
+    border-radius: 8px;
+    border: 2px #767676 solid;
+    box-shadow: 1px 1px;
+    font-size: 14px;
+    padding: 2px;
+    user-select: none;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#color-picker {
+    opacity: 0;
+    padding: 0;
+    position: absolute;
+    height: 12px;
+    width: 84px;
+}
+
+#picker-wrapper {
+    border: 1px black solid;
+    border-radius: 8px;
+    height: 12px;
+    width: 84px;
 }
 
 #container {
@@ -16,7 +53,7 @@ button {
 
 #sketchpad {
     background-color: white;
-    border: 4px solid red;
+    border: 4px solid #3E3E3E;
     display: flex;
 }
 

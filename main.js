@@ -1,5 +1,5 @@
 function changeColor() {
-    this.style.backgroundColor = 'black';
+    this.style.backgroundColor = colorPicker.value;
 }
 
 // Create a grid based on parameters given.
@@ -46,4 +46,11 @@ densityButton.addEventListener('click', changeGridDensity);
 clearButton.addEventListener('click', clearGrid);
 
 createGrid();
+
+const colorPicker = document.querySelector("#color-picker");
+const pickerWrapper = document.querySelector("#picker-wrapper");
+colorPicker.onchange = function() {
+    pickerWrapper.style.backgroundColor = colorPicker.value;
+}
+pickerWrapper.style.backgroundColor = colorPicker.value;
 
