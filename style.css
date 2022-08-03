@@ -7,10 +7,6 @@ button {
     margin: 8px;
 }
 
-.sector:hover {
-    background-color: black;
-}
-
 #container {
     padding: 2rem 10rem;
     display: flex;
